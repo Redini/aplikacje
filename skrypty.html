@@ -88,6 +88,63 @@
             }
 </script>
        </div>
+
+       <div id="formularz">
+            <p>
+                    <h1>Usługa</h1>
+                </p>
+             <form>
+                 <label>imie</label>
+                 <p><input type="text" id="imie"></p>
+                 <label>nazwisko</label>
+                 <p>
+                     <input type="text" id="nazwisko">
+                 </p>
+                 <p>
+                     <label>Email:</label>
+                 </p>
+                 <p><input type="email" id="email"></p>
+                 <p>
+                     <label>Usługa:</label>
+                 </p>
+                 <p>
+                     <textarea id="usluga" > </textarea>
+                 </p>
+                 <p>
+                     <label> Zapoznałem się z regulaminem</label>
+                     <input type="checkbox" id="regulamin">
+                 </p>
+                 <p>
+                     <button type="button" onclick="formularz()">Prześlij</button>
+                 </p>
+                 <p id="blad"></p>
+                 <p id="bomba"></p>
+             </form>
+             
+     <script>
+         function formularz(){
+                    var imie = document.getElementById("imie").value;
+                    var nazwisko = document.getElementById("nazwisko").value;
+                    var usluga = document.getElementById("usluga").value;
+                    var checkregulamin = document.getElementById("regulamin").checked;
+                    var email = document.getElementById("email").value;
+                    var blad = "zapoznaj się z regulaminem";
+                    if(checkregulamin){
+                        
+
+                    }else{
+                        
+                        document.getElementById("blad").innerHTML = blad
+                        console.log("eeeeeeeeee")
+                    }
+
+                     
+                 }
+     </script>
+       </div>
+
+
+
     </article>
        <nav>
         <a href="index.html">Formatowanie</a>
