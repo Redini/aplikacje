@@ -17,17 +17,17 @@
                <h1>Koszt wesela</h1>
            </p>
            <form>
-               <lable>Liczba Gośći:</lable>
+               <label>Liczba Gośći:</label>
                <p><input type="number" id="liczbagosci"></p>
                <label>Poprawiny</label>
                <input type="checkbox" id="check">
-               <button type="button" action="wesele()">Wynik</button>
+               <button type="button" onclick="wesele()">Wynik</button>
            </form>
            <script>
             function wesele(){
                 var liczbagosci = document.getElementById("liczbagosci").value
                 var cenagosci = liczbagosci * 100
-                var poprawiny = getElementById("check").value
+                var poprawiny = document.getElementById("check").checked
                 if(poprawiny){
                     var cenafull = cenagosci + liczbagosci*30
 
@@ -44,6 +44,11 @@
            </script>
        </div>
        </article>
+       <nav>
+        <a href="index.html">Formatowanie</a>
+        <a href="tabela.html">Tabela</a>
+        <a href="skrypty.html">Skrypty</a>
+      </nav>
       <footer>4TI Piękoś&copy;</footer>
     </div>
   </body>
