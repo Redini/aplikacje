@@ -179,3 +179,10 @@ nav {
       animation-name: dart;
       animation-duration: 5s;
   }
+  #form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 5%;
+  }
