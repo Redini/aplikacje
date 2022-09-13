@@ -12,24 +12,37 @@
       <header>Formatowanie tekstu</header>
 
       <article>
-        <p>
-            <h1>Koszt wesela</h1>
-        </p>
-        <form>
-            <lable>Liczba Gośći:</lable>
-            <p><input type="number"></p>
-            <label>Poprawiny</label>
-            <input type="checkbox" id="check">
+       \<div id="wesele">
+           <p>
+               <h1>Koszt wesela</h1>
+           </p>
+           <form>
+               <lable>Liczba Gośći:</lable>
+               <p><input type="number" id="liczbagosci"></p>
+               <label>Poprawiny</label>
+               <input type="checkbox" id="check">
+               <button type="button" >Wynik</button>
+           </form>
+           <script>
+            function wesele(){
+                var liczbagosci = document.getElementById("liczbagosci").value
+                var cenagosci = liczbagosci * 100
+                var poprawiny = getElementById("check").value
+                if(poprawiny){
+                    var cenafull = cenagosci + liczbagosci*30
 
-        </form>
-      </article>
+                }else{
+                    cenafull = cenagosci
+                }
+                console.log(liczbagosci);
+                console.log(cenafull);
+                console.log(cenagosci);
+                console.log(poprawiny);
+            }
+            
 
-      <nav>
-        <a href="index.html">Formatowanie</a>
-        <a href="tabela.html">Tabela</a>
-        <a href="skrypty.html">Skrypty</a>
-      </nav>
-
+           </script>
+       </div>
       <footer>4TI Piękoś&copy;</footer>
     </div>
   </body>
