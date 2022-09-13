@@ -22,7 +22,9 @@
                <label>Poprawiny</label>
                <input type="checkbox" id="check">
                <button type="button" onclick="wesele()">Wynik</button>
+               
            </form>
+           <p id="wynikwesele">wynik</p>
            <script>
             function wesele(){
                 var liczbagosci = document.getElementById("liczbagosci").value
@@ -38,12 +40,55 @@
                 console.log(cenafull);
                 console.log(cenagosci);
                 console.log(poprawiny);
+                document.getElementById("wynikwesele").innerHTML = cenafull
             }
             
 
            </script>
        </div>
-       </article>
+       <div id="nieruchomosc">
+           <p>
+           	<h1>Kalkulator mieszkania</h1>
+           </p>
+        <form>
+            <label>liczba metrów</label>
+            <p><input type="number" id="metry"></p>
+            <label>ile pokoi z siecią</label>
+            <p>
+                <input type="number" id="siec">
+            </p>
+            <label>kafelki</label>
+            <input type="checkbox" id="checkkafel">
+            <p>
+                <button type="button" onclick="mieszkanie()">Wynik</button>
+            </p>
+           
+        </form>
+        <p id="wynikmieszkanie"></p>
+<script>
+    function mieszkanie(){
+                var metry = document.getElementById("metry").value
+                var cenamieszkania = metry * 4000
+                var kafelki = document.getElementById("checkkafel").checked
+                var pokojezsiecia = document.getElementById("siec").value
+                var cenacala = cenamieszkania + pokojezsiecia * 1000
+
+                if(kafelki){
+                    var cenacala = cenacala + 2000
+
+                }else{
+                    cenacala 
+                }
+                console.log(metry);
+                console.log(cenacala);
+                console.log(pokojezsiecia);
+                console.log(kafelki);
+                console.log(cenamieszkania)
+                document.getElementById("wynikmieszkanie").innerHTML = cenacala
+            }
+</script>
+       </div>
+    </article>
        <nav>
         <a href="index.html">Formatowanie</a>
         <a href="tabela.html">Tabela</a>
@@ -51,5 +96,6 @@
       </nav>
       <footer>4TI Piękoś&copy;</footer>
     </div>
+
   </body>
 </html>
