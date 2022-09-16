@@ -131,6 +131,8 @@
                     var blad = "zapoznaj się z regulaminem";
                     if(checkregulamin){
                         
+                        document.getElementById("bomba").innerHTML = imie.toUpper() + nazwisko.toUpper() + "twoje sprawy:" + usluga
+
 
                     }else{
                         
@@ -142,6 +144,35 @@
                  }
      </script>
        </div>
+       <div id="pizza">
+        <p>
+            <h1>OBlicz koszt dostawy</h1>
+        </p>
+        <form>
+            <label>Liczba Kilometrów:</label>
+            <p><input type="number" id="liczbakm"></p>
+            <label>Jestem z Zielonej góry</label>
+            <input type="checkbox" id="checkpizza">
+            <button type="button" onclick="pizza()">Wynik</button>
+            
+        </form>
+        <p id="cena"></p>
+       </div>
+       <script>
+        var liczbakm = document.getElementById("liczbakm").value
+               
+                var zg = document.getElementById("checkpizza").checked
+                if(zg){
+                    document.getElementById("cena").innerHTML = "Darmowa dostawa"
+
+                }else{
+                    var cena = liczbakm * 2
+                    document.getElementById("cena").innerHTML = cena + " PLN"
+                    window.alert(cena + " PLN")
+                }
+               
+                
+       </script>
 
 
 
