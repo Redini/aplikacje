@@ -1,190 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <header>Formatowanie tekstu</header>
+        <header>Formatowanie tekstu</header>
 
-      <article>
-       <div id="wesele">
-           <p>
-               <h1>Koszt wesela</h1>
-           </p>
-           <form>
-               <label>Liczba Gośći:</label>
-               <p><input type="number" id="liczbagosci"></p>
-               <label>Poprawiny</label>
-               <input type="checkbox" id="check">
-               <button type="button" onclick="wesele()">Wynik</button>
-               
-           </form>
-           <p id="wynikwesele">wynik</p>
-           <script>
-            function wesele(){
-                var liczbagosci = document.getElementById("liczbagosci").value
-                var cenagosci = liczbagosci * 100
-                var poprawiny = document.getElementById("check").checked
-                if(poprawiny){
-                    var cenafull = cenagosci + liczbagosci*30
-
-                }else{
-                    cenafull = cenagosci
-                }
-                console.log(liczbagosci);
-                console.log(cenafull);
-                console.log(cenagosci);
-                console.log(poprawiny);
-                document.getElementById("wynikwesele").innerHTML = cenafull
-            }
-            
-
-           </script>
-       </div>
-       <div id="nieruchomosc">
-           <p>
-           	<h1>Kalkulator mieszkania</h1>
-           </p>
-        <form>
-            <label>liczba metrów</label>
-            <p><input type="number" id="metry"></p>
-            <label>ile pokoi z siecią</label>
-            <p>
-                <input type="number" id="siec">
-            </p>
-            <label>kafelki</label>
-            <input type="checkbox" id="checkkafel">
-            <p>
-                <button type="button" onclick="mieszkanie()">Wynik</button>
-            </p>
-           
-        </form>
-        <p id="wynikmieszkanie"></p>
-<script>
-    function mieszkanie(){
-                var metry = document.getElementById("metry").value
-                var cenamieszkania = metry * 4000
-                var kafelki = document.getElementById("checkkafel").checked
-                var pokojezsiecia = document.getElementById("siec").value
-                var cenacala = cenamieszkania + pokojezsiecia * 1000
-
-                if(kafelki){
-                    var cenacala = cenacala + 2000
-
-                }else{
-                    cenacala 
-                }
-                console.log(metry);
-                console.log(cenacala);
-                console.log(pokojezsiecia);
-                console.log(kafelki);
-                console.log(cenamieszkania)
-                document.getElementById("wynikmieszkanie").innerHTML = cenacala
-            }
-</script>
-       </div>
-
-       <div id="formularz">
-            <p>
-                    <h1>Usługa</h1>
+        <article>
+            <div id="wesele">
+                <p>
+                    <h1>Koszt wesela</h1>
                 </p>
-             <form>
-                 <label>imie</label>
-                 <p><input type="text" id="imie"></p>
-                 <label>nazwisko</label>
-                 <p>
-                     <input type="text" id="nazwisko">
-                 </p>
-                 <p>
-                     <label>Email:</label>
-                 </p>
-                 <p><input type="email" id="email"></p>
-                 <p>
-                     <label>Usługa:</label>
-                 </p>
-                 <p>
-                     <textarea id="usluga" > </textarea>
-                 </p>
-                 <p>
-                     <label> Zapoznałem się z regulaminem</label>
-                     <input type="checkbox" id="regulamin">
-                 </p>
-                 <p>
-                     <button type="button" onclick="formularz()">Prześlij</button>
-                 </p>
-                 <p id="blad"></p>
-                 <p id="bomba"></p>
-             </form>
-             
-     <script>
-         function formularz(){
-                    var imie = document.getElementById("imie").value;
-                    var nazwisko = document.getElementById("nazwisko").value;
-                    var usluga = document.getElementById("usluga").value;
-                    var checkregulamin = document.getElementById("regulamin").checked;
-                    var email = document.getElementById("email").value;
-                    var blad = "zapoznaj się z regulaminem";
-                    if(checkregulamin){
-                        
-                        document.getElementById("bomba").innerHTML = imie.toUpper() + nazwisko.toUpper() + "twoje sprawy:" + usluga
+                <form>
+                    <label>Liczba Gośći:</label>
+                    <p><input type="number" id="liczbagosci"></p>
+                    <label>Poprawiny</label>
+                    <input type="checkbox" id="check">
+                    <button type="button" onclick="wesele()">Wynik</button>
 
+                </form>
+                <p id="wynikwesele">wynik</p>
+                <script>
+                    function wesele() {
+                        var liczbagosci = document.getElementById("liczbagosci").value
+                        var cenagosci = liczbagosci * 100
+                        var poprawiny = document.getElementById("check").checked
+                        if (poprawiny) {
+                            var cenafull = cenagosci + liczbagosci * 30
 
-                    }else{
-                        
-                        document.getElementById("blad").innerHTML = blad
-                        console.log("eeeeeeeeee")
+                        } else {
+                            cenafull = cenagosci
+                        }
+                        console.log(liczbagosci);
+                        console.log(cenafull);
+                        console.log(cenagosci);
+                        console.log(poprawiny);
+                        document.getElementById("wynikwesele").innerHTML = cenafull
                     }
 
-                     
-                 }
-     </script>
-       </div>
-       <div id="pizza">
-        <p>
-            <h1>Oblicz koszt dostawy</h1>
-        </p>
-        <form>
-            <label>Liczba Kilometrów:</label>
-            <p><input type="number" id="liczbakm"></p>
-            <label>Jestem z Zielonej góry</label>
-            <input type="checkbox" id="checkpizza">
-            <button type="button" onclick="pizza()">Wynik</button>
-            
-        </form>
-        <p id="cena"></p>
-       </div>
-       <script>
-        var liczbakm = document.getElementById("liczbakm").value
-               
-                var zg = document.getElementById("checkpizza").checked
-                function pizza(){
-                if(zg){
-                    document.getElementById("cena").innerHTML = "Darmowa dostawa"
 
-                }else{
-                    var cena = liczbakm * 2
-                    document.getElementById("cena").innerHTML = cena + " PLN"
-                    window.alert(cena + " PLN")
+                </script>
+            </div>
+            <div id="nieruchomosc">
+                <p>
+                    <h1>Kalkulator mieszkania</h1>
+                </p>
+                <form>
+                    <label>liczba metrów</label>
+                    <p><input type="number" id="metry"></p>
+                    <label>ile pokoi z siecią</label>
+                    <p>
+                        <input type="number" id="siec">
+                    </p>
+                    <label>kafelki</label>
+                    <input type="checkbox" id="checkkafel">
+                    <p>
+                        <button type="button" onclick="mieszkanie()">Wynik</button>
+                    </p>
+
+                </form>
+                <p id="wynikmieszkanie"></p>
+                <script>
+                    function mieszkanie() {
+                        var metry = document.getElementById("metry").value
+                        var cenamieszkania = metry * 4000
+                        var kafelki = document.getElementById("checkkafel").checked
+                        var pokojezsiecia = document.getElementById("siec").value
+                        var cenacala = cenamieszkania + pokojezsiecia * 1000
+
+                        if (kafelki) {
+                            var cenacala = cenacala + 2000
+
+                        } else {
+                            cenacala
+                        }
+                        console.log(metry);
+                        console.log(cenacala);
+                        console.log(pokojezsiecia);
+                        console.log(kafelki);
+                        console.log(cenamieszkania)
+                        document.getElementById("wynikmieszkanie").innerHTML = cenacala
+                    }
+                </script>
+            </div>
+
+            <div id="formularz">
+                <p>
+                    <h1>Usługa</h1>
+                </p>
+                <form>
+                    <label>imie</label>
+                    <p><input type="text" id="imie"></p>
+                    <label>nazwisko</label>
+                    <p>
+                        <input type="text" id="nazwisko">
+                    </p>
+                    <p>
+                        <label>Email:</label>
+                    </p>
+                    <p><input type="email" id="email"></p>
+                    <p>
+                        <label>Usługa:</label>
+                    </p>
+                    <p>
+                        <textarea id="usluga"> </textarea>
+                    </p>
+                    <p>
+                        <label> Zapoznałem się z regulaminem</label>
+                        <input type="checkbox" id="regulamin">
+                    </p>
+                    <p>
+                        <button type="button" onclick="formularz()">Prześlij</button>
+                    </p>
+                    <p id="blad"></p>
+                    <p id="bomba"></p>
+                </form>
+
+                <script>
+                    function formularz() {
+                        var imie = document.getElementById("imie").value;
+                        var nazwisko = document.getElementById("nazwisko").value;
+                        var usluga = document.getElementById("usluga").value;
+                        var checkregulamin = document.getElementById("regulamin").checked;
+                        var email = document.getElementById("email").value;
+                        var blad = "zapoznaj się z regulaminem";
+                        if (checkregulamin) {
+
+                            document.getElementById("bomba").innerHTML = imie.toUpper() + nazwisko.toUpper() + "twoje sprawy:" + usluga
+
+
+                        } else {
+
+                            document.getElementById("blad").innerHTML = blad
+                            console.log("eeeeeeeeee")
+                        }
+
+
+                    }
+                </script>
+            </div>
+            <div id="pizza">
+                <p>
+                    <h1>Oblicz koszt dostawy</h1>
+                </p>
+
+                <form>
+                    <label>Liczba Kilometrów:</label>
+                    <p><input type="number" id="km"></p>
+                    <label>Jestem z Zielonej góry</label>
+                    <input type="checkbox" id="checkpizza">
+                    <button type="button" onclick="pizza()">Wynik</button>
+                    <p id="cena"></p>
+                </form>
+
+            </div>
+            <script>
+
+                function pizza() {
+                    var liczbakm = document.getElementById("km").value;
+                    
+                    var zg = document.getElementById("checkpizza").checked;
+                    if (zg) {
+                        document.getElementById("cena").innerHTML = "Darmowa dostawa";
+
+                    } else {
+                        var cena = liczbakm * 2;
+                        document.getElementById("cena").innerHTML = cena + " PLN";
+                        window.alert(cena + " PLN");
+                    }
                 }
-            }
-                
-       </script>
+
+            </script>
+
+            <div id="tekst">
+                <p>
+                    <h1>Formatowanie tekstu</h1>
+                </p>
+                <form>
+                    <label>Podaj rozmiar tekstu w procentach</label>
+                    <input type="text" id="procenty" onchange="rozmiar()">%
+                    <p><select id="opcje" onchange="styl()">
+                            <option value="kursywa">kursywa</option>
+                            <option value="podkreślenie">podkreślenie</option>
+                            <option value="rube">bold</option>
+                            
+                        </select></p>
+                        <label for="ods">Odstępy między literami</label>
+                        <input type="checkbox" id="ods" onmouseout="styl1()">
+                    <p>Jakim kolorem chcesz pokolorwać tekst? Wybierz przyciskiem</p>
+                    <button type="button" onclick="document.getElementById('edit').style.color = 'red';" id="red"></button>
+                    <button type="button" onclick=" document.getElementById('edit').style.color = 'green';" id="green"></button>
+                    <button type="button" onclick="document.getElementById('edit').style.color = 'blue';" id="blue"></button>
+
+                </form>
+                <p id="edit">to jest przykladowy tekst, ktory moze byc dowolonie formatowany przez js</p>
+
+            </div>
+            <script>
+                window.onload = function(){styl()}
+
+
+                function rozmiar() {
+                    var procent = document.getElementById("procenty").value
+                    document.getElementById("edit").style.fontSize = procent + "%"
+
+                }
+                function styl() {
+                    
+                    var opcje = document.getElementById("opcje").value
+                    document.getElementById("edit").style.fontStyle = "initial"
+                    document.getElementById("edit").style.textDecoration = "initial"
+                    document.getElementById("edit").style.fontWeight = "initial"
+                    switch (opcje) {
+                        case "kursywa":
+                            return document.getElementById("edit").style.fontStyle = "italic"
+
+
+                        case "podkreślenie":
+                            return document.getElementById("edit").style.textDecoration = "underline"
+
+                        case "rube":
+                            return document.getElementById("edit").style.fontWeight = "bold"
+                        
+                    }
+                    console.log(ods);
+                    
+                     
+
+                }
+function styl1(){
+    var ods = document.getElementById("ods").checked
+    if(ods){
+                            document.getElementById("edit").style.letterSpacing = "5px"
+                    }else{
+                        document.getElementById("edit").style.letterSpacing = "0px"
+                    }
+                           
+}
+            </script>
 
 
 
-    </article>
-       <nav>
-        <a href="index.html">Formatowanie</a>
-        <a href="tabela.html">Tabela</a>
-        <a href="skrypty.html">Skrypty</a>
-      </nav>
-      <footer>4TI Piękoś&copy;</footer>
+
+
+        </article>
+        <nav>
+            <a href="index.html">Formatowanie</a>
+            <a href="tabela.html">Tabela</a>
+            <a href="skrypty.html">Skrypty</a>
+        </nav>
+        <footer>4TI Piękoś&copy;</footer>
     </div>
 
-  </body>
+</body>
+
 </html>
